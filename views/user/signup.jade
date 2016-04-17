@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+	h1.text-center SignUp
+	form.col-md-6.no-float(action="/signup" method="post",enctype="multipart/form-data")
+		.form-group.clearfix
+			label Name
+			input.form-control(type="text" name="User[name]")
+		.form-group.clearfix
+			label Email
+			input.form-control(type="text" name="User[email]")
+		.form-group.clearfix
+			label Password
+			input.form-control(type="text" name="User[password]")
+		div.pull-right
+			button.btn.btn-primary Save

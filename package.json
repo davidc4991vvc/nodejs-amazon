@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-amazon",
+  "version": "1.0.0",
+  "description": "an Amazone clone build with nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammed-manssour/nodejs-amazon.git"
+  },
+  "author": "Mohammed Manssour <manssour.mohammed@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammed-manssour/nodejs-amazon/issues"
+  },
+  "homepage": "https://github.com/mohammed-manssour/nodejs-amazon#readme",
+  "dependencies" : {
+    "express" : "*",
+    "mongoose" : "*",
+    "bcrypt-nodejs" : "*",
+    "body-parser" : "*",
+    "jade": "*",
+    "express-session" : "*",
+    "cookie-parser" : "*",
+    "express-flash":"*",
+    "connect-mongo" : "*",
+    "passport" : "*",
+    "passport-local": "*",
+    "async" : "*",
+    "mongoosastic" : "*"
+  },
+  "devDependencies" : {
+    "nodeman" : "*",
+    "morgan" : "*",
+    "faker" : "*"
+  }
+}

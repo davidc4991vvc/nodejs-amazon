@@ -1,0 +1,23 @@
+{
+	"name": "nodejs-amazon",
+ 	"homepage": "https://github.com/mohammed-manssour/nodejs-amazon",
+ 	"authors": [
+		"Mohammed Manssour <manssour.mohammed@gmail.com>"
+	],
+	"description": "an amazon clone build with nodejs",
+	"main": "",
+	"moduleType": [],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+  	],
+  	"dependencies" : {
+  		"jquery" : "*",
+		"bootstrap": "*",
+		"font-awesome" : "*"
+  	}
+}

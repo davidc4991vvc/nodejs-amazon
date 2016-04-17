@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+	h1.text-center search results for "#{query}"
+	.row
+		if data
+			for product in data
+				.col-md-4
+					.inner.border-radius
+						.thumbnail
+							img(src="#{product.image}")
+							.caption
+								h3
+									a(href="/product/#{product._id}")= product.name
+								h5 $ #{product.price}
+								h5= product.category.name
+								
+		else
+			.alert.alert-danger no data found

@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+	h1.text-center Add New Category
+	form.col-md-6.no-float(action="/addCategory" method="post")
+		.form-group.clearfix
+			label Name
+			input.form-control(type="text" name="name")
+		div.pull-right
+			button.btn.btn-primary Save

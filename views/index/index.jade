@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+	h1.text-center Amazone Clone
+	.row
+		if products
+			for product in products
+				.col-md-4
+					.inner.border-radius
+						.thumbnail
+							img(src="#{product.image}")
+							.caption
+								h3
+									a(href="/product/#{product._id}")= product.name
+								h5 $ #{product.price}
+								h5= product.category.name
+
+	.row
+		.col-md-12
+			ul.pagination.text-center
+				- for (var i=1;i<=count;i++)
+					li(class=page==i?"active":"")
+						if i===1
+							a(href="/")= i 
+						else
+							a(href="/products/page/#{i}")= i 

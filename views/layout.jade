@@ -1,0 +1,64 @@
+doctype html
+html
+	head
+		title= title
+		meta( charset='utf-8' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
+		link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+	body
+		.navbar.navbar-default
+			.container-fluid
+				.navbar-header
+					button.navbar-toggle.collapsed(type='submit',data-toggle="collapse",data-target="#bs-example-navbar-collapse-1",aria-expanded="false")
+						i.fa.fa-bars
+					a.navbar-brand Amazone Clone
+
+				.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+					ul.nav.navbar-nav
+						li
+							a(href="/") Home
+						li
+							a(href="/about") About
+						
+						if !req.user
+							li
+								a(href="/login") Login
+							li
+								a(href="/signup") SignUp
+						else
+							li
+								a(href="/profile") Profile
+							li
+								a(href="/logout") Logout
+					form.navbar-form.navbar-left(action="/search", method="post")
+						.input-group
+							input.form-control(type="text",name="q",placeholder="name",required="required")
+							span.input-group-btn
+								button.btn.btn-primary(type="submit") Search
+
+					if categories
+						ul.nav.navbar-nav.navbar-right
+							li.dropdown
+								a.dropdown-toggle(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false") Categories 
+									span.caret
+								ul.dropdown-menu
+									for cat in categories
+										li
+											a(href="/viewCategory/#{cat.name}")= cat.name
+								
+
+		.container
+			if messages.danger
+				for key in messages.danger
+					div(class="alert alert-danger")= key
+			if messages.success
+				for key in messages.success
+					div(class="alert alert-success")= key
+
+			block content
+
+		script( src='/jquery/dist/jquery.min.js' )
+		script( src='/bootstrap/dist/js/bootstrap.min.js')
